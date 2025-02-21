@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUR WORLD</title>
+    <link rel="icon" href="icon.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+        .header {
+            background-color: aqua;
+            padding: 10px;
+        }
+        .header h1 {
+            font-size: 3em;
+            font-family: Algerian, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+        .section {
+            padding: 20px;
+        }
+        .custom-p1 {
+            font-family: Algerian, sans-serif;
+            text-shadow: 2px 2px 5px #000000;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .marquee-content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .marquee-content img {
+            position: absolute;
+            left: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 18px;
+            color: #555;
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #ffcccb;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .blurred-image {
+            filter: blur(10px); /* Increased blur effect */
+            transition: filter 0.3s;
+        }
+        .unblurred-image {
+            filter: none;
+        }
+        .popup-image {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            animation: popIn 1s ease-in-out;
+        }
+        @keyframes popIn {
+            0% {
+                transform: scale(0.5) translate(-50%, -50%);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="backgroundAudio" loop>
+        <source src="life changing.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="header">
+        <h1 style="color: black;"><i><strong>WELCOME TO OUR GALLERY</strong>💚✨</i></h1>
+    </div>
+   
+    <marquee behavior="slide" direction="left" scrollamount="100">
+        <img id="todayImage" class="blurred-image" src="Gallery 1.jpg" width="300" height="300" alt="Naruto">
+    </marquee>
+
+    <img id="giftImage" class="popup-image" src="today.jpeg" alt="Gift" height="400" width="400">
+
+    <p id="popupText" class="custom-p1">
+        என்னை ரசிக்க 
+        <span style="color: red;">நீ,</span>  
+        உன்னை ரசிக்க 
+        <span style="color: red;">நான்</span> 
+        நம்மை ரசிக்க 
+        <span style="color: red;">நம் குழந்தை</span>
+    </p>
+    
+
+    <script>
+        const image = document.getElementById('todayImage');
+        const audio = document.getElementById('backgroundAudio');
+        const giftImage = document.getElementById('giftImage');
+        const popupText = document.getElementById('popupText');
+
+        image.addEventListener('click', () => {
+            if (image.classList.contains('blurred-image')) {
+                image.classList.remove('blurred-image');
+                image.classList.add('unblurred-image');
+                audio.play();
+                setTimeout(() => {
+                    giftImage.style.display = 'block';
+                    popupText.style.display = 'block';
+                }, 7000); // 7 seconds
+            } else {
+                image.classList.remove('unblurred-image');
+                image.classList.add('blurred-image');
+                audio.pause();
+            }
+        });
+    </script>
+</body>
+</html>

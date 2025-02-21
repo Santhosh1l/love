@@ -1,0 +1,62 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+        .header {
+            background-color: aqua;
+            padding: 10px;
+        }
+       
+        
+        .header h1 {
+            font-size: 3em;
+            font-family: Algerian, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+        .section {
+            padding: 20px;
+        }
+        .custom-p1 {
+            font-family: Algerian, sans-serif;
+            text-shadow: 2px 2px 5px #000000;
+            font-size: 20px; /* Correcting the property name */
+            font-weight: bold;
+            text-align: center;
+        }
+        .marquee-content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .marquee-content img {
+            position: absolute;
+            left: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 18px;
+            color: #555;
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+       
+        .footer {
+            background-color: #ffcccb;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        
